@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinder Falso</title>
+
+    <style>
+
+    
+        body{
+
+            --bg:#191012;
+            --text-color:#e0e4ce;
+            --bg-cards:#114d4d;
+            --bg-little-cards:#2d3839;
+            --border:#092727;
+            --big-cards-hover:#0e4242;
+
+
+
+
+            margin: 0px;
+            background-color: var(--bg);
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color);
+
+
+        }
+
+        .card-group {
+            aspect-ratio: 5/7;
+            width: 30vmin;
+            transform: scale(1.3) ;
+
+            
+        }
+
+
+    
+        
+        
+
+        .card{  
+            aspect-ratio: 5/7;
+        }
+
+        .big-card{
+            background-color: var(--bg-cards);
+            width: 30vmin;
+            border-radius: 1vmin;
+            position: absolute;
+            grid-template-columns: 1fr;
+            display: grid;
+            font-family: Lexend Deca;
+            border: 2px solid var(--border);
+            transition: transform 0.8s ease;     
+        }
+        .big-card  h1,p,img{
+            margin: 5%;
+            padding: 0%;
+
+        }
+
+        .big-card img{
+            width:80%;
+            height: auto;
+            border: 2px solid;
+            border-radius: 1vmin;
+            aspect-ratio: 3/2;
+            object-fit:cover;
+
+
+        }
+
+
+        .little-card{
+            background-color: var(--bg-little-cards);
+            width: 70%;
+            border-radius: 1vmin;
+            aspect-ratio: 5/7;
+            position: relative;
+            margin: 5%;
+            display: grid;
+            grid-template-rows: 20% 1fr;
+            transition: transform 0.8s ease; 
+            color: var(--text-color);    
+
+            
+        }
+        .little-card:hover{
+            transform: scale(1.1);
+            /*PQ Q ELE SÓ DA HOVER QND A BID-CARD 2 TA NO WRAPPER??*/ 
+        }
+
+        .fundo{
+            background-color: var(--border);
+            border-radius: 1vmin;
+            height: 100%;
+            object-fit: cover;
+        }
+        #fundo1{
+            background-image: url(/assets/siteResponsivoPrint1.png);
+            background-size: 100% 100%;            
+        }
+
+       
+
+        .little-cards{
+            width: 100%;
+            height: 90%;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+        }
+        
+ 
+        .big-card:nth-child(1){
+            transform: translate(-10%) rotate(-0deg);
+        }
+
+        .big-card:nth-child(2){
+            display: flex;
+            flex-direction: column;
+            transform: rotate(2deg);
+            justify-content: center;
+        }
+
+       
+
+        .big-card:nth-child(3){
+            transform: translate(-6%,2%) rotate(-3deg);
+        }
+        .big-card:nth-child(4){
+            transform: translate(10%,3%) rotate(5deg);
+        }
+
+
+     
+
+
+
+
+        .card-group:hover{
+            width: 75%;
+            display: flex;
+            height: 42vmin;
+            justify-content: space-evenly;
+
+
+           
+          
+        }
+
+
+
+        .card-group:hover > .card{
+            position: relative;
+            
+        }
+        .card-group:hover *{
+            transform:  rotate(0deg) ;
+        }
+
+        .hover:hover{
+            transform: scale(1.1);
+            background-color: var(--big-cards-hover);
+        }
+
+
+
+
+        .wrapper-group{
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            top: 0%;
+            left: 0%;
+        }
+    
+        .wrapper {
+            width: 30vmin;
+            aspect-ratio: 5/7;
+            position:absolute;  
+            transform: scale(2) ;
+            transition: transform 0.8s ease;   
+
+        }
+
+
+
+
+
+        .close-icon{
+            position: absolute;
+            display: none;
+            transition: transform 0.8s ease;   
+        }
+
+    
+
+
+        .close-icon img{
+            width: 10%;
+            transform: translate(1000%,-680%);
+            
+        }
+    </style>
+</head>
+<body class="body">
+    
+        <div class="card-group">
+
+
+            <div class="big-card card hover" id="big-card1" >
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius mollis nulla, porta gravida mi. Sed vulputate ac nibh suscipit aliquet. Quisque sit amet nisi nulla. Etiam sed ante id nulla euismod dictum eu a neque. Aenean eget dignissim nulla. Nunc hendrerit mattis varius. </p>
+            </div>
+
+
+            <div class="big-card card hover" id="big-card2">   
+                <h1>Projetos</h1>
+                <div class="little-cards">
+                    <div class="little-card card">
+                        
+                            <p style="color: var(--text-color); font-size: 0.65em; margin-left: 5%; margin-top: 7.5%;">Site Responsivo</p>
+                        <div class="fundo" id="fundo1"></div>
+                       
+                        
+                    </div>
+                    
+                    <div class="little-card card">
+                        <p style="color: var(--text-color); font-size: 0.65em; margin-left: 5%; margin-top: 7.5%;">Copia Tinder</p>
+                        <div class="fundo"id="fundo2"></div>
+                    </div>
+                    <div class="little-card card">
+                        <p style="color: var(--text-color); font-size: 0.65em; margin-left: 5%; margin-top: 7.5%;">Site Responsivo</p>
+                        <div class="fundo" id="fundo3"></div>
+                    </div>
+                    <div class="little-card card">
+                        <p style="color: var(--text-color); font-size: 0.65em; margin-left: 5%; margin-top: 7.5%;">Site Responsivo</p>
+                        <div class="fundo" id="fundo4"></div>
+                    </div>
+                </div>
+              
+            </div>
+        
+        
+
+            <div class="big-card card hover" id="big-card3"></div>
+
+
+            <div class="big-card card hover" id="big-card4">
+                <h1>Eduardo Hainzenreder Pedroso</h1>
+                <div class="profile"></div>
+            </div>
+
+           
+
+        
+
+        </div>
+
+        <div class="wrapper-group">
+            <div class="wrapper"></div>
+        </div>
+        <div class="close-icon">
+            <img src="assets/close_icon.png" alt="" >
+        </div>
+        
+       
+
+   
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend:wght@200;300;400;500;600;700&display=swap');
+    </style>
+
+
+
+<script>
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var bigCards = document.querySelectorAll('.big-card');
+    var closeIcon = document.querySelector('.close-icon')
+    var cardGroup = document.querySelector('.card-group')
+
+
+
+    bigCards.forEach(function(card) {
+        card.addEventListener('click', function(event) {
+            // Verifica se a carta já está selecionada
+            var isSelected = card.classList.contains('selected');
+
+            // Adiciona a classe 'selected' à carta clicada
+            if (!isSelected) {
+                card.classList.add('selected');
+                card.classList.remove('hover');
+
+
+                // Cria uma cópia da carta selecionada
+
+                if(card.id == "big-card2"){
+                   let littleCards = document.querySelectorAll('.little-card');
+                    var x = 0;
+                    var fundo = document.querySelectorAll('.fundo')
+
+                   littleCards.forEach(function(littleCard){
+                        let anchor = document.createElement('a')
+
+                        
+                        littleCard.appendChild(anchor)
+                        anchor.appendChild(fundo.item(x))
+                        anchor.className = "anchor" 
+                        anchor.id = 'anchor' + x;
+                        anchor.target = '/blank'
+
+                        if(anchor.id == 'anchor0'){
+                            anchor.href = 'siteResponsivo.html'
+                        }
+                        else if(anchor.id == 'anchor1'){
+                            anchor.href = 'copiaTinder.html'
+                        }
+                        else{
+                            anchor.href = 'index.html'
+                        }
+                        
+                        x+=1
+
+
+                   })
+                }
+
+                var clonedCard = card.cloneNode(true);
+
+                // Seleciona a div wrapper
+                
+                var wrapper = document.querySelector('.wrapper');
+
+                // Adiciona a cópia da carta selecionada dentro da div wrapper
+                wrapper.appendChild(clonedCard);
+                card.style.display = 'none'
+                
+                var wrapperGroup = document.querySelector('.wrapper-group')
+                wrapperGroup.style.display = 'flex'
+                closeIcon.style.display = 'block'
+                cardGroup.style.display = "none"
+  
+
+                
+
+            } 
+            else{
+                card.classList.remove('hover');
+
+            }
+
+            // Impede a propagação do evento para evitar que o clique seja registrado em outros lugares
+            event.stopPropagation();
+        });
+    });
+
+    // Remove a seleção da carta quando qualquer outra parte do documento é clicada
+    closeIcon.addEventListener('click', function() {
+        var closeIcon = document.querySelector('.close-icon')
+        var wrapper = document.querySelector('.wrapper');
+        var wrapperGroup = document.querySelector('.wrapper-group')
+        var cardGroup = document.querySelector('.card-group')
+
+        wrapperGroup.style.display= 'none'
+        cardGroup.style.display = "flex"
+
+  
+        bigCards.forEach(function(card) {
+            
+            card.classList.remove('selected');
+            card.classList.add('hover');
+            closeIcon.style.display = 'none'
+
+
+            card.style.display = 'grid'
+            
+            wrapper.innerHTML = '';
+
+
+            if(card.id == "big-card2"){
+                    let littleCards = document.querySelectorAll('.little-card');
+                    var fundo = document.querySelectorAll('.fundo')
+
+                    var x = 0
+                    
+                    littleCards.forEach(function(littleCard){
+                        littleCard.appendChild(fundo.item(x))
+                        x+=1
+                        
+                        
+                        let anchor = document.querySelectorAll('.anchor')
+                        anchor.forEach(function(anchorx){
+                            
+                            if(anchorx.parentNode){
+                            anchorx.parentNode.removeChild(anchorx)
+                        }
+                        })
+                        
+                       
+                        
+
+
+                   })
+                }
+
+        });
+
+  
+    });
+});
+
+
+
+</script>
+
+
+</body>
+</html>
