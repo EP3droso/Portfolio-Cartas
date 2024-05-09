@@ -194,7 +194,6 @@
 
         span{
             font-weight: bold;
-            
         }
         
         #bigCard3 .lista{
@@ -254,19 +253,35 @@
 
 
         .close-icon{
+            left: 70em;
+            top: 5em;
             position: absolute;
             display: none;
             transition: transform 0.8s ease;   
         }
 
-    
-
-
         .close-icon img{
             width: 10%;
-            transform: translate(1000%,-680%);
-            
         }
+
+        .fade {
+            transition: opacity 1s ease-in-out;
+        }
+
+        .fadeIn{
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+    
+
+        .select{
+            transition: opacity 0.8s ease-in-out;
+        }
+
+      
+
+
+
     </style>
 </head>
 <body class="body">
@@ -391,71 +406,77 @@ document.addEventListener('DOMContentLoaded', function() {
     bigCards.forEach(function(card) {
         card.addEventListener('click', function(event) {
             // Verifica se a carta já está selecionada
-            var isSelected = card.classList.contains('selected');
+            let isSelected = card.classList.contains('selected');
+       
 
             // Adiciona a classe 'selected' à carta clicada
             if (!isSelected) {
-                card.classList.add('selected');
                 card.classList.remove('hover');
 
+                
 
-                // Cria uma cópia da carta selecionada
-
-                if(card.id == "big-card2"){
+                if(card.id == 'bigCard2'){
                    let littleCards = document.querySelectorAll('.little-card');
                     var x = 0;
                     var fundo = document.querySelectorAll('.fundo')
 
                    littleCards.forEach(function(littleCard){
-                        let anchor = document.createElement('a')
-
+                        let anchor = document.createElement('a');
                         
-                        littleCard.appendChild(anchor)
-                        anchor.appendChild(fundo.item(x))
-                        anchor.className = "anchor" 
+                        littleCard.appendChild(anchor);
+                        anchor.appendChild(fundo.item(x));
+                        anchor.className = "anchor" ;
                         anchor.id = 'anchor' + x;
-                        anchor.target = '/blank'
+                        anchor.target = '/blank';
 
                         if(anchor.id == 'anchor0'){
-                            anchor.href = 'siteResponsivo.html'
+                            anchor.href = 'siteResponsivo.html';
                         }
                         else if(anchor.id == 'anchor1'){
-                            anchor.href = 'copiaTinder.html'
-                        }
-                        else{
-                            anchor.href = 'index.html'
+                            anchor.href = 'copiaTinder.html';
                         }
                         
-                        x+=1
+                        
+                        x+=1;
 
 
-                   })
-                }
+                   });
+                };
 
                 var clonedCard = card.cloneNode(true);
+                clonedCard.id = "clone"
+                clonedCard.style.opacity = 0
+                card.classList.add('selected')
+                cardGroup.classList.add('fade')
+                cardGroup.style.opacity = 0;
+                // Cria uma cópia da carta selecionada
 
+         
                 // Seleciona a div wrapper
                 
                 var wrapper = document.querySelector('.wrapper');
 
-                // Adiciona a cópia da carta selecionada dentro da div wrapper
-                wrapper.appendChild(clonedCard);
-                card.style.display = 'none'
-                
-                var wrapperGroup = document.querySelector('.wrapper-group')
-                wrapperGroup.style.display = 'flex'
-                closeIcon.style.display = 'block'
-                cardGroup.style.display = "none"
-  
+                setTimeout(() => {
+                    // Adiciona a cópia da carta selecionada dentro da div wrapper
+                    wrapper.appendChild(clonedCard);
+                    card.style.display = 'none';
+                    setTimeout(()=>{
+                        clonedCard.classList.add('select')
+                        clonedCard.style.opacity = 1;
+                    },100);
+                    
 
-                
+                    
+
+                    var wrapperGroup = document.querySelector('.wrapper-group')
+                    wrapperGroup.style.display = 'flex'
+                    closeIcon.style.display = 'block'
+                    cardGroup.style.display = "none"
+                    
+                }, 1000)
+
 
             } 
-            else{
-                card.classList.remove('hover');
-
-            }
-
             // Impede a propagação do evento para evitar que o clique seja registrado em outros lugares
             event.stopPropagation();
         });
@@ -463,56 +484,85 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Remove a seleção da carta quando qualquer outra parte do documento é clicada
     closeIcon.addEventListener('click', function() {
+
         var closeIcon = document.querySelector('.close-icon')
         var wrapper = document.querySelector('.wrapper');
         var wrapperGroup = document.querySelector('.wrapper-group')
         var cardGroup = document.querySelector('.card-group')
 
-        wrapperGroup.style.display= 'none'
-        cardGroup.style.display = "flex"
 
-  
-        bigCards.forEach(function(card) {
-            
-            card.classList.remove('selected');
-            card.classList.add('hover');
-            closeIcon.style.display = 'none'
+        
+                
 
 
-            card.style.display = 'grid'
-            
-            wrapper.innerHTML = '';
+                bigCards.forEach(function(card) {
 
+                    let isSelected = card.classList.contains('selected');
 
-            if(card.id == "big-card2"){
-                    let littleCards = document.querySelectorAll('.little-card');
-                    var fundo = document.querySelectorAll('.fundo')
-
-                    var x = 0
                     
-                    littleCards.forEach(function(littleCard){
-                        littleCard.appendChild(fundo.item(x))
-                        x+=1
-                        
-                        
-                        let anchor = document.querySelectorAll('.anchor')
-                        anchor.forEach(function(anchorx){
-                            
-                            if(anchorx.parentNode){
-                            anchorx.parentNode.removeChild(anchorx)
-                        }
-                        })
-                        
-                       
-                        
+                    
+                    let clonedCard = document.querySelector('#clone')
+                    clonedCard.style.opacity = 0;
+                    
+
+                    cardGroup.style.display = "flex"
+                    card.style.display = 'grid'
 
 
-                   })
-                }
+                    setTimeout(() => {
+                        cardGroup.style.opacity = 1;
+                        wrapperGroup.style.display= 'none'
+                    },800)
+                    
 
+                    
+
+                    setTimeout(()=>{
+                        /*NAO ENTENDI PQ PRECISA DESSE TIMER MAS PELO Q EU FUI TESTANDO PRECISA DELE -> ESTUDAR SOBRE*/
+        
+                        
+                        card.classList.remove('selected');
+                        card.classList.add('hover');
+                        closeIcon.style.display = 'none'
+
+
+                        
+                        wrapper.innerHTML = '';
+
+
+                            if(card.id == "bigCard2"){
+                                    let littleCards = document.querySelectorAll('.little-card');
+                                    var fundo = document.querySelectorAll('.fundo')
+
+                                    var x = 0
+                                    
+                                        littleCards.forEach(function(littleCard){
+                                            littleCard.appendChild(fundo.item(x))
+                                            x+=1
+                                            
+                                            
+                                            let anchor = document.querySelectorAll('.anchor')
+                                            anchor.forEach(function(anchorx){
+                                                
+                                                if(anchorx.parentNode){
+                                                    anchorx.parentNode.removeChild(anchorx)
+                                                }
+                                            })
+                                            
+                                    
+                                        
+
+
+                                        })
+                            }
+
+
+
+                    },1000)
         });
 
-  
+        
+    
     });
 });
 

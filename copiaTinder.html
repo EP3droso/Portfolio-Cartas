@@ -153,8 +153,9 @@ body{
     /*TOPICO 2 - DESCRICAO*/
     .conteudo-descricao{
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        justify-items: center;
     }
 
     .conteudo-descricao a{
@@ -176,25 +177,21 @@ body{
     }
 
     .conteudo-descricao :nth-child(1 of img){
-        margin-left: 2em;
-        height: 40vh;
+        height: 50vh;
 
     }
 
     .conteudo-descricao img:nth-child(2 of img){
-        margin-right: 2em;
-        height: 35vh;
+        height: 60vh;
     }
 
     .conteudo-descricao :nth-child(3 of img){
-        margin-left: 2em;
-        height: 15vh;
+        height: 50vh;
 
     }
     
     .conteudo-descricao img:nth-child(4 of img){
-        margin-right: 2em;
-        height: 40vh;
+        height: 35vh;
     }
 
 
@@ -258,19 +255,19 @@ body{
             <div id="descricaoDiv" class="topico">
                 <h2 id="descricao">Descrição</h2>
                 <div class="conteudo-descricao">
-                    <p> Site responsivo, feito com base em um desafio do <a href="">FrontEnd Mentor</a>, que tem como ideia criar um site de respostas a dúvidas frequentes sobre o próprio programa do FrontEnd Mentor. O software tem como base 4 perguntas com imagens ao lado, além de um titulo acima e um fundo de imagem. </p>
-                    <img src="assets/siteResponsivoPrint1.png" alt="Print do projeto">
+                    <p> Site criado com base na ideia do app de relacionamentos Tinder, onde cada perfil apresenta uma seleção de cartas, que ficam agrupadas até que o usuário interaja sobre elas, colocando o mouse em cima. Ao colocar o mouse a "mão" de cartes se abre revelando assim todas as cartas contendo as informações do perfil.</p>
+                    <img src="assets/copiaTinderPrint3.png" alt="Print do projeto">
 
-                    <img src="assets/siteResponsivoPrint2.png" alt="">
-                    <p>O aspecto de interatividade do site se baseia nas imagens ao lado das perguntas, este que por sua vex foi totalmente feito com JavaScript. Tal sistema foi feito com base em que as imagens são originalmente um icone de mais, contudo quando o usuário cilca na imagem esta se torna um icone de menos, revelando então o texto abaixo das perguntas </p>
-
-
-                    <p>O código de JavaScript é curto e simples, como seu primeiro passo ele cria uma função recebendo como parâmentros o ID do texto e o ID da imagem, em seguida ele seleciona a imagem e o texto a serem editados com base nos ID's recebidos.</p>
-                    <img src="assets/siteResponsivoPrint3.png" alt="">
+                    <img src="assets/copiaTinderPrint1.png" alt="">
+                    <p> Caso o usuário coloque o mouse por cima de qualquer carta o design das mesmas se expande para as laterais facilitanto a visibilidade das cartas, além disso o site permite que o usuário clique no grupo de cartas, expnadindo-o ainda mais para os lados e permitindo uma analise mais intrinseca de cada um dos elementos</p>
 
 
-                    <img src="assets/siteResponsivoPrint4.png" alt="">
-                    <p> Após isso o ele verifica se a imagem é do simbolo de mais ao averiguar sua fonte, caso a verificação de verdadeiro, o código então transforma a imagem no simbolo de menos  analisa qual o ID do texto recebido e, dependendo de qual seja, troca o conteudo da resposta pelo texto correto. Caso a verificação de falso, o código então colocaa fonte da imagem como a do simbolo de mais.</p>
+                    <p>A ultima função do site é um sistema de seleção de perfis, feito com 2 botões o Love e o Hate. Estes dois botões quando apertados mandam o perfil na tela para a direita e esquerda respectivamente. Esta ideia iita o sistema de seleção feito no propio Tinder com o arrastar para a direita(match) e esquerda(block). Quando mandado para quaquer um dos lados o grupo de cartas diminue até sumir e o grupo que é enviado em seguida expande até o tamanho normal</p>
+                    <img src="assets/copiaTinderPrint3.png" alt="">
+
+
+                    <img src="assets/copiaTinderPrint4.png" alt="">
+                    <p> A parte de JavaScript do código é composta por 3 funções, sendo que, as funções handleLoveButton e handelHateButton tem a mesma lógica só que com efeitos inertidos. A função de seleciona garante quando o usuário clique no grupo de cartas este se expanda para os lados. Já o funcionamento das funções dos botões é feito de forma que quando o usuário clicar em Love ou Hate o grupo de cartas atual e o que vem a seguir recebem uma classe possibilitando que se movimentem da forma correta e com a animaçã correta</p>
 
 
 
