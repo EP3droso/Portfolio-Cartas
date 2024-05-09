@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Site Responsivo</title>
+</head>
+
+<style>
+    /*CONFIGURAÇÕES GERAIS E DE ESTRUTURA DO SITE*/
+
+body{
+    /*variaveis de cor*/
+    --bg: #e2e2e2; 
+    --bg-header:#77181e;
+    --bg-nav:#a92727;
+    --bg-fundo-nav: #1a1a20;
+    --color-text: #0e0e11;
+    --bg-h2: #9eb5b5;
+
+
+    margin:0px;
+    background-color: var(--bg);
+    font-family: Lexend Deca;
+    color: var(--color-text);
+
+    
+    }
+    html{
+        max-width: 100%;
+    }
+  
+    .pagina{
+        display: grid;
+        grid-template-columns: 12% 1fr;
+    }
+
+
+    header{
+        background-color: var(--bg-header);
+        height: 25vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.5em;
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em;
+        margin-bottom: 1em;
+        
+
+    }
+
+
+    /*_______________________________________________________________________________________________________________________________________________________*/
+    /*NAV*/
+    nav{
+        position: fixed;
+        top: 30%;
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em;
+        width: 12%;
+        background-color: var(--bg-nav);
+        height: 50%;
+        font-size: 1.8em;
+        display: grid;
+        grid-template-rows: 20% 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        
+    }
+    nav p{
+        background-color: var(--bg-header);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em;
+        color: var(--color-text);
+        font-weight: 700;
+    }
+    nav a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        color: var(--color-text);
+        text-decoration: none;
+        
+    }
+
+    
+
+    nav .comBorda{
+        border-top: solid 0.2em rgb(0, 0, 0, 0.2);
+
+    }
+
+    .fundo-nav{
+        background-color:var(--bg-fundo-nav);
+        height: 100%;
+        width: 100%;
+        display: block;
+    }
+    .fundo-borda-header{
+        position: absolute;
+        background-color: var(--bg-fundo-nav);
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        z-index: -1;
+        width: 12%;
+    }
+
+
+    /*_______________________________________________________________________________________________________________________________________________________*/
+    /*CONFIGURAÇÕES GERAIS DOS TOPICOS*/
+    .topico{
+        display: flex;
+        flex-direction: column;
+        margin-right: 2em;
+        margin-left: 4em;
+    }
+
+    .topico h2{
+        font-size: 2em;
+        background-color: var(--bg-h2);
+        padding: 3%;
+        border-radius: 1em;
+        margin-top: 4em ;
+    }
+
+    .topico  p,li{
+        font-size: 1.5em;
+        margin-left: 2em;
+    }
+    .topico a{
+        font-size: 1.5em;
+        
+    }
+    .topico img{
+        width: 1.2em;
+    }
+
+
+    /*_______________________________________________________________________________________________________________________________________________________*/
+    /*TOPICO 2 - DESCRICAO*/
+    .conteudo-descricao{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center
+    }
+
+    .conteudo-descricao a{
+        font-size: 1em;
+        color: var(--bg-nav);
+    }
+    .conteudo-descricao p{
+        display: inline;
+    }
+
+    .conteudo-descricao img{
+        border: var(--color-text) solid 0.5em;
+        border-radius: 1em;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        width: auto;
+     
+       
+    }
+
+    .conteudo-descricao :nth-child(1 of img){
+        margin-left: 2em;
+        height: 40vh;
+
+    }
+
+    .conteudo-descricao img:nth-child(2 of img){
+        margin-right: 2em;
+        height: 35vh;
+    }
+
+    .conteudo-descricao :nth-child(3 of img){
+        margin-left: 2em;
+        height: 15vh;
+
+    }
+    
+    .conteudo-descricao img:nth-child(4 of img){
+        margin-right: 2em;
+        height: 40vh;
+    }
+
+
+
+    /*_______________________________________________________________________________________________________________________________________________________*/
+    /*TOPICO 3 - GITHUB*/
+
+    .github a{
+        font-size: 1em;
+        color: var(--bg-nav);
+    }
+    .github img{
+        width: 1.5em;
+        margin-top: em;
+    }
+    /*_______________________________________________________________________________________________________________________________________________________*/
+    /*FOOTER*/
+
+
+    footer{
+        display: flex;
+        flex-direction: row;
+        background-color: var(--bg-header);
+        font-size: 1.3em;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        margin-top: 8em;
+    }
+    footer *{
+        margin: 1.3em;
+        color: var(--bg);
+    }
+    
+
+</style>
+<body>
+
+    <header>    
+        <h1>Site Responsivo</h1>
+    </header>
+    <div class="fundo-borda-header"></div>
+
+    <div class="pagina">
+        <div class="fundo-nav"></div>
+        <nav>
+            <p>Tópicos:</p>
+            <a href="#tecnologias" class="link">Tecnologias</a>
+            <a href="#descricao" class="link comBorda">Descrição</a>
+            <a href="#github" class="link comBorda">Github</a>
+        </nav>
+
+        <div class="conteudo">
+            <div id="tecnologiasDiv" class="topico">
+                <h2 id="tecnologias">Tecnologias</h2>
+                <ul>
+                    <li>Html <img src="assets/htmlIcon.png" alt="html icon"></li>
+                    <li>CSS <img src="assets/cssIcon.png" alt="CSS Icon"></li>
+                    <li>JavaScript <img src="assets/jsIcon.png" alt="JavaScript Icon"></li>
+                </ul>
+            </div>
+            <div id="descricaoDiv" class="topico">
+                <h2 id="descricao">Descrição</h2>
+                <div class="conteudo-descricao">
+                    <p> Site responsivo, feito com base em um desafio do <a href="">FrontEnd Mentor</a>, que tem como ideia criar um site de respostas a dúvidas frequentes sobre o próprio programa do FrontEnd Mentor. O software tem como base 4 perguntas com imagens ao lado, além de um titulo acima e um fundo de imagem. </p>
+                    <img src="assets/siteResponsivoPrint1.png" alt="Print do projeto">
+
+                    <img src="assets/siteResponsivoPrint2.png" alt="">
+                    <p>O aspecto de interatividade do site se baseia nas imagens ao lado das perguntas, este que por sua vex foi totalmente feito com JavaScript. Tal sistema foi feito com base em que as imagens são originalmente um icone de mais, contudo quando o usuário cilca na imagem esta se torna um icone de menos, revelando então o texto abaixo das perguntas </p>
+
+
+                    <p>O código de JavaScript é curto e simples, como seu primeiro passo ele cria uma função recebendo como parâmentros o ID do texto e o ID da imagem, em seguida ele seleciona a imagem e o texto a serem editados com base nos ID's recebidos.</p>
+                    <img src="assets/siteResponsivoPrint3.png" alt="">
+
+
+                    <img src="assets/siteResponsivoPrint4.png" alt="">
+                    <p> Após isso o ele verifica se a imagem é do simbolo de mais ao averiguar sua fonte, caso a verificação de verdadeiro, o código então transforma a imagem no simbolo de menos  analisa qual o ID do texto recebido e, dependendo de qual seja, troca o conteudo da resposta pelo texto correto. Caso a verificação de falso, o código então colocaa fonte da imagem como a do simbolo de mais.</p>
+
+
+
+                </div>
+            </div>
+            <div id="githubDiv" class="github topico">
+                <h2 id="github">Github</h2>
+                <li>
+                    <a href="https://github.com/EP3droso/Site-de-Duvidas-Responsivo---Frontend-Mentor" target="_blank">Link do projeto</a> 
+                </li>
+            </div>
+        
+        
+            <footer>
+                <p class="conteudoFooter">Whatssap:(54)9907-9738</p>
+                <a href="mailto:eduardo.hpedroso123@gmail.com" class="conteudoFooter" target="_blank">Email: eduardo.hpedroso123@gmail.com</a>
+                <a href="https://github.com/EP3droso" class="conteudoFooter" target="_blank">Github</a>
+                <a href="https://www.linkedin.com/in/eduardo-hainzenreder-pedroso-06733a2b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="conteudoFooter" target="_blank">Linkedin</a>
+                <p>Site feito por: Eduardo Hainzenreder Pedroso</p>
+            </footer>
+        
+        
+
+
+        </div>
+    </div>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend:wght@200;300;400;500;600;700&display=swap');
+    </style>
+</body>
+</html>

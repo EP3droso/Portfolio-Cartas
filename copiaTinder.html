@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Site Responsivo</title>
+</head>
+
+<style>
+    /*CONFIGURAÇÕES GERAIS E DE ESTRUTURA DO SITE*/
+
+body{
+    /*variaveis de cor*/
+    --bg: #f0debb; 
+    
+    --bg-header:#091c1a;
+    --bg-nav:#16453f;
+    --bg-fundo-nav: #1d2322;
+    --color-text-titles: #f0debb;
+    --color-text:#061210;
+    --bg-h2: #7e2852;
+
+
+
+   
+    margin:0px;
+    background-color: var(--bg);
+    font-family: Lexend Deca;
+    color: var(--color-text);
+
+    
+    }
+    html{
+        max-width: 100%;
+    }
+  
+    .pagina{
+        display: grid;
+        grid-template-columns: 12% 1fr;
+    }
+
+
+    header{
+        background-color: var(--bg-header);
+        height: 25vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.5em;
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em;
+        margin-bottom: 1em;
+        color: var(--color-text-titles);
+
+    }
+
+
+    /*_______________________________________________________________________________________________________________________________________________________*/
+    /*NAV*/
+    nav{
+        position: fixed;
+        top: 30%;
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em;
+        width: 12%;
+        background-color: var(--bg-nav);
+        height: 50%;
+        font-size: 1.8em;
+        display: grid;
+        grid-template-rows: 20% 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        
+    }
+    nav p{
+        background-color: var(--bg-header);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em;
+        color: var(--color-text-titles);
+        font-weight: 700;
+    }
+    nav a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        color: var(--color-text);
+        text-decoration: none;
+        
+    }
+
+    
+
+    nav .comBorda{
+        border-top: solid 0.2em rgb(0, 0, 0, 0.2);
+
+    }
+
+    .fundo-nav{
+        background-color:var(--bg-fundo-nav);
+        height: 100%;
+        width: 100%;
+        display: block;
+    }
+    .fundo-borda-header{
+        position: absolute;
+        background-color: var(--bg-fundo-nav);
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        z-index: -1;
+        width: 12%;
+    }
+
+
+    /*_______________________________________________________________________________________________________________________________________________________*/
+    /*CONFIGURAÇÕES GERAIS DOS TOPICOS*/
+    .topico{
+        display: flex;
+        flex-direction: column;
+        margin-right: 2em;
+        margin-left: 4em;
+    }
+
+    .topico h2{
+        font-size: 2em;
+        background-color: var(--bg-h2);
+        padding: 3%;
+        border-radius: 1em;
+        margin-top: 4em ;
+    }
+
+    .topico  p,li{
+        font-size: 1.5em;
+        margin-left: 2em;
+    }
+    .topico a{
+        font-size: 1.5em;
+        
+    }
+    .topico img{
+        width: 1.2em;
+    }
+
+
+    /*_______________________________________________________________________________________________________________________________________________________*/
+    /*TOPICO 2 - DESCRICAO*/
+    .conteudo-descricao{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .conteudo-descricao a{
+        font-size: 1em;
+        color: var(--bg-nav);
+    }
+    .conteudo-descricao p{
+        display: inline;
+    }
+
+    .conteudo-descricao img{
+        border: var(--color-text) solid 0.5em;
+        border-radius: 1em;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        width: auto;
+     
+       
+    }
+
+    .conteudo-descricao :nth-child(1 of img){
+        height: 50vh;
+
+    }
+
+    .conteudo-descricao img:nth-child(2 of img){
+        height: 60vh;
+    }
+
+    .conteudo-descricao :nth-child(3 of img){
+        height: 50vh;
+
+    }
+    
+    .conteudo-descricao img:nth-child(4 of img){
+        height: 35vh;
+    }
+
+
+
+    /*_______________________________________________________________________________________________________________________________________________________*/
+    /*TOPICO 3 - GITHUB*/
+
+    .github a{
+        font-size: 1em;
+        color: var(--bg-nav);
+    }
+    .github img{
+        width: 1.5em;
+        margin-top: em;
+    }
+    /*_______________________________________________________________________________________________________________________________________________________*/
+    /*FOOTER*/
+
+
+    footer{
+        display: flex;
+        flex-direction: row;
+        background-color: var(--bg-header);
+        font-size: 1.3em;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        margin-top: 8em;
+    }
+    footer *{
+        margin: 1.3em;
+        color: var(--bg);
+    }
+    
+
+</style>
+<body>
+
+    <header>    
+        <h1>Copia Tinder</h1>
+    </header>
+    <div class="fundo-borda-header"></div>
+
+    <div class="pagina">
+        <div class="fundo-nav"></div>
+        <nav>
+            <p>Tópicos:</p>
+            <a href="#tecnologias" class="link">Tecnologias</a>
+            <a href="#descricao" class="link comBorda">Descrição</a>
+            <a href="#github" class="link comBorda">Github</a>
+        </nav>
+
+        <div class="conteudo">
+            <div id="tecnologiasDiv" class="topico">
+                <h2 id="tecnologias">Tecnologias</h2>
+                <ul>
+                    <li>Html <img src="assets/htmlIcon.png" alt="html icon"></li>
+                    <li>CSS <img src="assets/cssIcon.png" alt="CSS Icon"></li>
+                    <li>JavaScript <img src="assets/jsIcon.png" alt="JavaScript Icon"></li>
+                </ul>
+            </div>
+            <div id="descricaoDiv" class="topico">
+                <h2 id="descricao">Descrição</h2>
+                <div class="conteudo-descricao">
+                    <p> Site criado com base na ideia do app de relacionamentos Tinder, onde cada perfil apresenta uma seleção de cartas, que ficam agrupadas até que o usuário interaja sobre elas, colocando o mouse em cima. Ao colocar o mouse a "mão" de cartes se abre revelando assim todas as cartas contendo as informações do perfil.</p>
+                    <img src="assets/copiaTinderPrint2.png" alt="Print do projeto">
+
+                    <img src="assets/copiaTinderPrint1.png" alt="">
+                    <p> Caso o usuário coloque o mouse por cima de qualquer carta o design das mesmas se expande para as laterais facilitanto a visibilidade das cartas, além disso o site permite que o usuário clique no grupo de cartas, expnadindo-o ainda mais para os lados e permitindo uma analise mais intrinseca de cada um dos elementos</p>
+
+
+                    <p>A ultima função do site é um sistema de seleção de perfis, feito com 2 botões o Love e o Hate. Estes dois botões quando apertados mandam o perfil na tela para a direita e esquerda respectivamente. Esta ideia iita o sistema de seleção feito no propio Tinder com o arrastar para a direita(match) e esquerda(block). Quando mandado para quaquer um dos lados o grupo de cartas diminue até sumir e o grupo que é enviado em seguida expande até o tamanho normal</p>
+                    <img src="assets/copiaTinderPrint3.png" alt="">
+
+
+                    <img src="assets/copiaTinderPrint4.png" alt="">
+                    <p> A parte de JavaScript do código é composta por 3 funções, sendo que, as funções handleLoveButton e handelHateButton tem a mesma lógica só que com efeitos inertidos. A função de seleciona garante quando o usuário clique no grupo de cartas este se expanda para os lados. Já o funcionamento das funções dos botões é feito de forma que quando o usuário clicar em Love ou Hate o grupo de cartas atual e o que vem a seguir recebem uma classe possibilitando que se movimentem da forma correta e com a animaçã correta</p>
+
+
+
+                </div>
+            </div>
+            <div id="githubDiv" class="github topico">
+                <h2 id="github">Github</h2>
+                <li>
+                    <a href="https://github.com/EP3droso/Copia-Tinder" target="_blank">Link do projeto</a> 
+                </li>
+            </div>
+        
+        
+            <footer>
+                <p class="conteudoFooter">Whatssap:(54)9907-9738</p>
+                <a href="mailto:eduardo.hpedroso123@gmail.com" class="conteudoFooter" target="_blank">Email: eduardo.hpedroso123@gmail.com</a>
+                <a href="https://github.com/EP3droso" class="conteudoFooter" target="_blank">Github</a>
+                <a href="https://www.linkedin.com/in/eduardo-hainzenreder-pedroso-06733a2b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="conteudoFooter" target="_blank">Linkedin</a>
+                <p>Site feito por: Eduardo Hainzenreder Pedroso</p>
+            </footer>
+        
+        
+
+
+        </div>
+    </div>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend:wght@200;300;400;500;600;700&display=swap');
+    </style>
+</body>
+</html>
